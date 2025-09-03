@@ -10,6 +10,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+app.use((req, res, next) => {
+  console.log("Request Origin:", req.headers.origin);
+  next();
+});
+
 const allowedOrigins =
   process.env.ORIGIN?.split(",").map((o) => o.trim()) || [];
 console.log("Allowed Origins:", allowedOrigins);
