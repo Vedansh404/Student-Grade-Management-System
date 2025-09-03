@@ -43,6 +43,9 @@ const dbURL = process.env.MONGO_URL;
 mongoose.connect(dbURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  ssl: true,
+  tls: true,
+  tlsAllowInvalidCertificates: true, // only if needed, not recommended for prod
 });
 // Schema to store file data
 const FileSchema = new mongoose.Schema(
