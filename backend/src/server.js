@@ -10,7 +10,18 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors());
+const allowedOrigins =
+  process.env.ORIGIN?.split(",").map((o) => o.trim()) || [];
+console.log("Allowed Origins:", allowedOrigins);
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+// app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
