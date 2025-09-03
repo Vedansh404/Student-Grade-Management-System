@@ -15,8 +15,9 @@ app.use((req, res, next) => {
   next();
 });
 
-const allowedOrigins =
-  process.env.ORIGIN?.split(",").map((o) => o.trim()) || [];
+const allowedOrigins = process.env.ORIGIN?.split(",").map((o) => o.trim()) || [
+  "https://student-grade-management-system.vercel.app",
+];
 console.log("Allowed Origins:", allowedOrigins);
 
 app.use(
