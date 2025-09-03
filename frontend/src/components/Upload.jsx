@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { UploadCloud } from "lucide-react";
-
+const URL =
+  "https://student-grade-management-system-production-ab81.up.railway.app";
 export default function Upload() {
   const [file, setFile] = useState(null);
 
@@ -26,7 +27,7 @@ export default function Upload() {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/upload", formData, {
+      await axios.post(`${URL}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("✅ File uploaded successfully!");

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
-
+const URL =
+  "https://student-grade-management-system-production-ab81.up.railway.app";
 export default function Files() {
   const [files, setFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -9,7 +10,7 @@ export default function Files() {
   const [editedRows, setEditedRows] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/files").then((res) => setFiles(res.data));
+    axios.get(`${URL}/files`).then((res) => setFiles(res.data));
   }, []);
 
   const handleSelect = async (id) => {
@@ -19,7 +20,7 @@ export default function Files() {
       return;
     }
 
-    const res = await axios.get(`http://localhost:5000/file/${id}`);
+    const res = await axios.get(`${URL}/file/${id}`);
     const rowsWithPercentage = res.data.rows.map((row) => {
       const marks = parseFloat(row.Marks_Obtained) || 0;
       const total = parseFloat(row.Total_Marks) || 0;
@@ -56,7 +57,7 @@ export default function Files() {
 
     const rowsToSave = editedRows.map(({ percentage, ...rest }) => rest);
 
-    await axios.put(`http://localhost:5000/file/${selectedFile._id}`, {
+    await axios.put(`${URL}/file/${selectedFile._id}`, {
       rows: rowsToSave,
     });
 
