@@ -11,6 +11,10 @@ This project allows users to upload **CSV/Excel files** of student marks, proces
 - **Backend API:** [Railway Deployment](https://student-grade-management-system-production-ab81.up.railway.app/)
 
 ---
+### Demo Video
+
+
+https://github.com/user-attachments/assets/4de39d57-c533-4bfa-99fa-0e055066ec5d
 
 ## ✨ Features
 
@@ -144,12 +148,9 @@ This project is licensed under the **MIT License**.
 
 **Vedansh Rashinkar**  
 🔗 [GitHub](https://github.com/Vedansh404)  
- [LinkedIn](www.linkedin.com/in/vedansh-rashinkar)
-
-### Demo Video
+🔗 [LinkedIn](www.linkedin.com/in/vedansh-rashinkar)
 
 
-https://github.com/user-attachments/assets/4de39d57-c533-4bfa-99fa-0e055066ec5d
 
 
 
